@@ -1,5 +1,4 @@
 <?php include 'config.php'; ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +23,7 @@ LOGO HERE
 	<div class="nav">
 
 		<ul class="clearfix">
-			<li class="home"><a href="index.html">HOME</a></li>
+			<li class="home"><a href="index.php">HOME</a></li>
 			<li><a  href="aboutus.html" >NEWS</a></li>
 			<li><a href="portfolio.html">LOGIN</a></li>
 			<li><a href="testimonials.html">SIGN UP</a></li>
@@ -45,7 +44,7 @@ LOGO HERE
 
 <div class="subtop" >
 <div class="infocf" >
-CRYPTO / FIAT:
+BITCOIN / FIAT:
 </div><!-- END INFOCF -->
 
 
@@ -56,7 +55,7 @@ CRYPTO / FIAT:
 	
 
 
-     <div class="crypto" ><script src="<?php echo $url; ?>/template/js/refresh.js"></script></div>
+     <div class="crypto" ><script src="template/js/refresh.js"></script></div>
  
  
  

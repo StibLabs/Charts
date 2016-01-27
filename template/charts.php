@@ -1,17 +1,18 @@
-
-
+<?php include 'statsbox.php'; ?>
+<?php include 'markets.php'; ?>
 <div class="content" >
 <div class="dropdown" >
 
-<div class="bestprice" >
-<div class="cns" >
-BEST  BITCOIN PRICE:
-<br>
-<span class="bigtitle" >478.23 USD</span>
-<span class="bigtitle" style="color:green;" >&utrif;</span>
-<span class="bigtitle" >1.22%</span>
-<br>
-COINBASE
+<div class="tab1 bestprice " >
+<div class="cns bpajax" >
+
+</div>
+</div>
+<!-- END PRICE -->
+
+<div class="tab2 bestprice " >
+<div class="cns bpajax2" >
+
 </div>
 </div>
 <!-- END PRICE -->
@@ -22,15 +23,16 @@ COINBASE
 <div class="sb" >
 <div class="selectb" >
     <div id='select'>Select</div>
-	<div class="subselect" ><span class="smalltitle" >SWITCH CRYPTO CURRENCY</span></div>
+	<div class="subselect" ><span class="smalltitle" >SWITCH CURRENCY</span></div>
 </div>  
 <div class="sarw" >	&dtrif;</div>
 </div>
 	
 	<ul class='toc-odd level-1 cad' id="sel-option" >
+
 	  <li><a href=".tab1">BITCOIN/USD</a></li>
-      <li><a href=".tab2">BITCOIN/EUR</a></li>
-      <li><a href=".tab3">BITCOIN/GBP</a></li>
+                  <li><a href=".tab2">LITECOIN/USD</a></li>
+
     </ul>
 </div>
 
@@ -39,7 +41,6 @@ COINBASE
 $(document).ready(function () {
    $("[class*='tab1']").show();
    $("[class*='tab2']").hide();
-   $("[class*='tab3']").hide();
 $('.cad a').click(function () {
    var tab_id = $(this).attr('href');    
    $("[class*='tab']").hide();
@@ -55,16 +56,16 @@ $('.cad a').click(function () {
 <div class="tab1 charts"  >
 <div class="titlec" >
 <div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/USD</span><br>
+&nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD</span><br>
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="" ><img src="<?php echo $url; ?>/template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
+<a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
 <div class="chartbox "  >
-Chart BITFINEX BITCOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Chart BTC-E BITCOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div><!-- END CHARTBOX -->
 </div>
 <!-- END CHARTS -->
@@ -75,51 +76,19 @@ Chart BITFINEX BITCOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><b
 <div class="tab2 charts"  >
 <div class="titlec" >
 <div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/EUR</span><br>
+&nbsp;&nbsp;<span class="bigtitle" >BTC-E LITECOIN/USD</span><br>
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="" ><img src="<?php echo $url; ?>/template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
+<a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
 <div class="chartbox "  >
-Chart BITFINEX BITCOIN/EUR<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Chart BTC-E LITECOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div><!-- END CHARTBOX -->
 </div>
 <!-- END CHARTS -->
-
-
-<div class="tab3 charts"  >
-<div class="titlec" >
-<div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/GBP</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
-</div>
-<div class="tright" >
-<a href="" ><img src="<?php echo $url; ?>/template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
-</div>
-</div>
-<!-- END TITLEC -->
-<div class="chartbox "  >
-Chart BITFINEX BITCOIN/GBP<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</div><!-- END CHARTBOX -->
-</div>
-<!-- END CHARTS -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -137,7 +106,7 @@ BITCOIN/USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-<img src="<?php echo $url; ?>/template/images/date.png" alt="" />
+<img src="template/images/date.png" alt="" />
 <script type="text/javascript">
 <!--
 var currentTime = new Date()
@@ -148,24 +117,7 @@ document.write(month + "/" + day + "/" + year)
 //-->
 </script>
 </div>
-<ul class="" >
-<li><a href="" >
-<span class="txtlf">BITFINEX</span>
-<span class="txtlr">378.23 USD</span>
-<span class="arws" style="color:green;" >
-&utrif;
-</span>
-</a>
-</li>
-
-<li><a href="" >
-<span class="txtlf">COINBASE</span>
-<span class="txtlr">378.23 USD</span>
-<span class="arws" style="color:green;" >
-&utrif;
-</span>
-</a>
-</li>
+<ul class="marketdatausd" >
 </ul>
 </div>
 <!-- MARKET 1 -->
@@ -175,11 +127,11 @@ document.write(month + "/" + day + "/" + year)
 
 <div class="tab2 market"  >
 <div class="markett" >
-BITCOIN/EUR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+LITECOIN/USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-<img src="<?php echo $url; ?>/template/images/date.png" alt="" />
+<img src="template/images/date.png" alt="" />
 <script type="text/javascript">
 <!--
 var currentTime = new Date()
@@ -190,68 +142,13 @@ document.write(month + "/" + day + "/" + year)
 //-->
 </script>
 </div>
-<ul>
-<li><a href="" >
-<span class="txtlf">BITFINEX</span>
-<span class="txtlr">20.23 EUR</span>
-<span class="arws" style="color:red;" >
-&dtrif;
-</span>
-</a>
-</li>
-
-<li><a href="" >
-<span class="txtlf">COINBASE</span>
-<span class="txtlr">20.23 EUR</span>
-<span class="arws" style="color:green;" >
-&utrif;
-</span>
-</a>
-</li>
+<ul class="marketdataeur" >
 </ul>
 </div>
 <!-- MARKET 2 -->
 
 
 
-<div class="tab3 market" >
-<div class="markett" >
-BITCOIN/GBP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-<img src="<?php echo $url; ?>/template/images/date.png" alt="" />
-<script type="text/javascript">
-<!--
-var currentTime = new Date()
-var month = currentTime.getMonth() + 1
-var day = currentTime.getDate()
-var year = currentTime.getFullYear()
-document.write(month + "/" + day + "/" + year)
-//-->
-</script>
-</div>
-<ul>
-<li><a href="" >
-<span class="txtlf">BITFINEX</span>
-<span class="txtlr">1.23 GBP</span>
-<span class="arws" style="color:green;" >
-&utrif;
-</span>
-</a>
-</li>
-
-<li><a href="" >
-<span class="txtlf">COINBASE</span>
-<span class="txtlr">2.23 GBP</span>
-<span class="arws" style="color:red;" >
-&dtrif;
-</span>
-</a>
-</li>
-</ul>
-</div>
-<!-- MARKET 3 -->
 
 <div class="marketst" >
 CLICK MARKET TO SEE CHART
@@ -268,22 +165,27 @@ CLICK MARKET TO SEE CHART
 <div class="stasbox" >
 <div class="cns" >
 
-<div class="tstat" >
-FINANCIAL STATS:
-</div>
-<div class="subst" >
-MARKET CAP(USD):<br>  
-<span class="agreen" >5.69 B</span>
-</div>
+
+
+
+
 <div class="subst" >
 TRADE VOLUME (USD):<br>  
-<span class="agreen" >180,289</span>
+<span class="agreen" ><?php echo $tvolusd;?></span>
 </div>
 <div class="subst" >
-SUPPLY:<br>  
-<span class="agreen" >15.09 MM</span>
+TRADE VOLUME (BTC):<br>  
+<span class="agreen" ><?php echo $tvolbtc;?></span>
 </div>
+<div class="subst" >
+BTC MINED:<br>  
+<span class="agreen" ><?php echo $btcmined;?></span>
+</div>
+
+
+
 <br>
+
 <div class="wikib" >
 <a href="" >MORE INFO</a>
 </div>
@@ -326,7 +228,7 @@ SUPPLY:<br>
 <div class="titlec" >
 <div class="tleft" >
 &nbsp;&nbsp;<span class="bigtitle" >LATEST NEWS</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
+&nbsp;&nbsp;<span class="smalltitle" >NEWS PROVIDED BY GOOGLE NEWS</span>
 </div>
 </div>
 <!-- END TITLEC -->
@@ -334,26 +236,15 @@ SUPPLY:<br>
 
 <div class="tnb" >
 <div class="hideb" >.</div>
-<div class="nbox" >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae pulvinar sem. Nam eu ornare nisl. Etiam eu 
-lorem vulputate, scelerisque sapien ac, feugiat nunc. Aliquam a diam et lorem tristique tempor eget... 
-<a href="" >READ MORE</a>
 
-</div><!-- END NEWS BOX -->
 
-<div class="nbox" >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae pulvinar sem. Nam eu ornare nisl. Etiam eu 
-lorem vulputate, scelerisque sapien ac, feugiat nunc. Aliquam a diam et lorem tristique tempor eget... 
-<a href="" >READ MORE</a>
 
-</div><!-- END NEWS BOX -->
+<div class="thenews" >
 
-<div class="nbox" >
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae pulvinar sem. Nam eu ornare nisl. Etiam eu 
-lorem vulputate, scelerisque sapien ac, feugiat nunc. Aliquam a diam et lorem tristique tempor eget... 
-<a href="" >READ MORE</a>
 
-</div><!-- END NEWS BOX -->
+</div>
+
+
 
 
 

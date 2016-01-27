@@ -2,8 +2,8 @@
 include 'config.php'; 
 $ln = str_repeat('&nbsp;', 5);
 $ln2 = str_repeat('&nbsp;', 2);
-echo "BITCOIN";
-echo  "$ln";
+
+
 
 
 echo "<span class=\"nob\" >USD</span>";
