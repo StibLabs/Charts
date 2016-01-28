@@ -10,3 +10,6 @@ var updateInterval = setInterval(function() {
   $('.marketdataeur').load('litecoinusd.php');
   $('.thenews').load('news.php');
 },1000);
+var updateInterval = setInterval(function() {
+$('.thenews').load('news.php');
+},3600*1000);

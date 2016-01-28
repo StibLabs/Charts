@@ -228,7 +228,7 @@ BTC MINED:<br>
 <div class="titlec" >
 <div class="tleft" >
 &nbsp;&nbsp;<span class="bigtitle" >LATEST NEWS</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >NEWS PROVIDED BY GOOGLE NEWS</span>
+&nbsp;&nbsp;<span class="smalltitle" >NEWS PROVIDED BY COINDESK</span>
 </div>
 </div>
 <!-- END TITLEC -->
