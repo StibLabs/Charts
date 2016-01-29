@@ -1,5 +1,5 @@
-<?php include 'statsbox.php'; ?>
 <?php include 'markets.php'; ?>
+<?php include 'statsbox.php'; ?>
 <div class="content" >
 <div class="dropdown" >
 
@@ -263,35 +263,10 @@ BTC MINED:<br>
 
 </div><!-- END LATESTNEWS -->
 
-<div class="glossary" >
-<div class="titlec" >
-<div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >TRADES INFO</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
+<div class="tab1 btcebtctrades glossary" >
 </div>
+<div class="tab2 btceltctrades glossary" >
 </div>
-<!-- END TITLEC -->
-
-<div class="tnews2" >
-<div class="tnb" >
-
-
-trades here
-
-<div class="wikib" >
-<a href="" >MORE INFO</a>
-</div>
-
-
-</div>
-</div><!-- END GLOSSARY BOX -->
-
-
-
-
-
-</div><!-- END GLOSSARY -->
-
 
 
 

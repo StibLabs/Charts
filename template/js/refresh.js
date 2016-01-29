@@ -8,8 +8,16 @@ var updateInterval = setInterval(function() {
   $('.bpajax2').load('bestpriceltc.php');
   $('.marketdatausd').load('bitcoinusd.php');
   $('.marketdataeur').load('litecoinusd.php');
-  $('.thenews').load('news.php');
 },1000);
 var updateInterval = setInterval(function() {
-$('.thenews').load('news.php');
+$('.thenews22').load('news22.php');
 },3600*1000);
+
+
+var updateInterval = setInterval(function() {
+$('.btcebtctrades').load('btcetradesbtcusd.php');
+},1000);
+
+var updateInterval = setInterval(function() {
+$('.btceltctrades').load('btcetradesltcusd.php');
+},1000);

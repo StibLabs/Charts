@@ -21,9 +21,9 @@
 </div>
 <!-- END SUBNAV -->
 <div class="social" >
-<a href="" ><img src="images/f.png" alt="" /></a>
-<a href="" ><img src="images/t.png" alt="" /></a>
-<a href="" ><img src="images/g.png" alt="" /></a>
+<a href="" ><img src="template/images/f.png" alt="" /></a>
+<a href="" ><img src="template/images/t.png" alt="" /></a>
+<a href="" ><img src="template/images/g.png" alt="" /></a>
 </div>
 <!-- END SOCIAL -->
 

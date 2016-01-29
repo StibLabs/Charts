@@ -1,4 +1,5 @@
 <?php 
+sleep(10);
 $json2 = file_get_contents('https://blockchain.info/stats?format=json');
 $decodedbtc = json_decode($json2);
 $btcmined = $decodedbtc->n_btc_mined;
