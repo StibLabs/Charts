@@ -1,5 +1,6 @@
 <?php 
 sleep(5);
+
 //BTC-E
 $jsonbtce = file_get_contents('https://btc-e.com/api/3/ticker/btc_usd');
 $decodedbtce = json_decode($jsonbtce);

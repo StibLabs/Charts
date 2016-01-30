@@ -9,10 +9,6 @@ var updateInterval = setInterval(function() {
   $('.marketdatausd').load('bitcoinusd.php');
   $('.marketdataeur').load('litecoinusd.php');
 },1000);
-var updateInterval = setInterval(function() {
-$('.thenews22').load('news22.php');
-},3600*1000);
-
 
 var updateInterval = setInterval(function() {
 $('.btcebtctrades').load('btcetradesbtcusd.php');

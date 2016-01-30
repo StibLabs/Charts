@@ -9,6 +9,8 @@
 <script src="template/js/menu.js"></script>
 <script src="template/js/marquee.js"></script>
 <script src="template/js/chartselect.js"></script>
+<script src="template/js/chart.js"></script>
+ <script type="text/javascript" language="javascript" src="template/js/rssparser.js"></script>
 <meta name="viewport" content="width=device-width">
 </head>
 <body>

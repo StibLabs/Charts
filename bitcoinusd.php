@@ -23,6 +23,9 @@ $color2 = "red";
 }
 
 
+
+
+
 echo "<li><a href=\"\" >";
 echo "<span class=\"txtlf\">BTC-E</span>";
 echo "<span class=\"txtlr\" style=\"color:$color1;\" >$btceusd USD</span>";

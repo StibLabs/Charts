@@ -4,7 +4,20 @@ margin:0;
 padding:0;
 background:#111111;
 }
-
+h3
+{
+padding:0 0 4px 0;
+margin:0;
+border-bottom:0px solid #000000;
+}
+h3 a
+{
+text-decoration:none;
+color:#000;
+font-family:'Arial';
+font-size:12px;
+font-weight:bold;
+}
 a
 {
 outline:none;
@@ -17,7 +30,7 @@ border:0;
 {
 width:100%;
 display:table;
-padding-top:5px;
+padding-top:4px;
 text-align:center;
 }
 .tradeb
@@ -433,7 +446,7 @@ float:right;
 .content2
 {
 
-margin-top:-220px;
+margin-top:-435px;
 width:98%;
 margin-left:auto;
 margin-right:auto;
@@ -479,7 +492,7 @@ float:left;
 .c2right
 {
 
-padding-top:223px;
+padding-top:440px;
 overflow:hidden;
 width:79%;
 float:right;
@@ -1131,11 +1144,11 @@ border:1px solid #000;
 @-moz-document url-prefix() {
 .content2
 {
-margin-top:-238px;
+margin-top:-421px;
 }
 .c2right
 {
-padding-top:240px;
+padding-top:430px;
 }
 .sarw
 {

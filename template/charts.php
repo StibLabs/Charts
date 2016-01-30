@@ -65,7 +65,12 @@ $('.cad a').click(function () {
 </div>
 <!-- END TITLEC -->
 <div class="chartbox "  >
-Chart BTC-E BITCOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="width:98%;margin:8px auto;background:#000;" >
+<div style="width:94%;margin-left:auto;margin-right:auto;background:#000;" >
+				<canvas id="canvas" ></canvas>
+</div>
+</div>
+<script src="template/js/chartbtce.js"></script>
 </div><!-- END CHARTBOX -->
 </div>
 <!-- END CHARTS -->
@@ -85,7 +90,12 @@ Chart BTC-E BITCOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><br><
 </div>
 <!-- END TITLEC -->
 <div class="chartbox "  >
-Chart BTC-E LITECOIN/USD<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="width:98%;margin:8px auto;background:#000;" >
+<div style="width:94%;margin-left:auto;margin-right:auto;background:#000;" >
+				<canvas id="canvas2" ></canvas>
+</div>
+</div>
+
 </div><!-- END CHARTBOX -->
 </div>
 <!-- END CHARTS -->
@@ -240,7 +250,17 @@ BTC MINED:<br>
 
 
 <div class="thenews" >
+<div id="news"></div>
 
+
+
+<script type="text/javascript">
+$(function(){
+  // running custom RSS functions
+  parseRSS('http://feeds.feedburner.com/CoinDesk?format=xml', '#news');
+
+});
+</script>
 
 </div>
 

@@ -25,7 +25,7 @@ echo "<div class=\"tnb\" style=\"padding-top:15px;\" >";
 
 
 
-for ($i = 5; $i--;)
+for ($i = 6; $i--;)
 {
 $timestamp = $btcetrades[$i]->timestamp;
 $time = date('G:i:s', $timestamp);

@@ -39,11 +39,14 @@ $bestarw = $arw2;
 $bestcolor = $color2;
 }
 
+$btcchange = (($bestprice / $btcavg24)-1)*100;
+$btcchange1 = round($btcchange, 2); 
+
 echo "BEST  BITCOIN PRICE:";
 echo "<br>";
 echo "<span class=\"bigtitle\" >$bestprice USD</span>";
 echo "<span class=\"bigtitle\" style=\"color:$bestcolor;\" >$bestarw</span>";
-echo "<span class=\"bigtitle\" >1.22%</span>";
+echo "<span class=\"bigtitle\" >$btcchange1 %</span>";
 echo "<br>";
 echo $btcetxt;
 
