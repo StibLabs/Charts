@@ -8,6 +8,7 @@ var updateInterval = setInterval(function() {
   $('.bpajax2').load('bestpriceltc.php');
   $('.marketdatausd').load('bitcoinusd.php');
   $('.marketdataeur').load('litecoinusd.php');
+ $('.chartboxx').load('achart.php');
 },1000);
 
 var updateInterval = setInterval(function() {
@@ -17,3 +18,8 @@ $('.btcebtctrades').load('btcetradesbtcusd.php');
 var updateInterval = setInterval(function() {
 $('.btceltctrades').load('btcetradesltcusd.php');
 },1000);
+
+
+var updateInterval = setInterval(function() {
+ $('.chartboxx22').load('chartbtce.php');
+},5000);

@@ -7,17 +7,9 @@ header("Refresh: $sec; url=$page");
 $jsonbtce = file_get_contents('https://btc-e.com/api/3/ticker/btc_usd');
 $decodedbtce = json_decode($jsonbtce);
 $btceusd1 = $decodedbtce->btc_usd->last;
-
-
 $thetime = $decodedbtce->btc_usd->updated;
 $time = date('G:i:s', $thetime);
-
 $btc1 = round($btceusd1,4);
-
-
-
-
-
 
 $myFile = "btc.txt";
 $fh = fopen($myFile, 'a') or die("can't open file");
@@ -30,11 +22,29 @@ $array = explode("\n", file_get_contents('btc.txt'));
 
 $array2 = explode("|", file_get_contents('btc.txt'));
 $ary = array_values(array_filter($array2));
+//var_dump($ary);
 
 
+function pricebtc($ary) {
+foreach($ary as $key => $value)
+ {
+   if($key%2 != 0){ 
+     echo $value.",";
+   }
+ }
+}
 
 
-var_dump($ary);
+function timebtc($ary) {
+  foreach($ary as $key => $value)
+  {
+  if($key%2 == 0){ 
+echo "\"".$value."\" ".",";
+    }
+  }
+}
+
+
 
 
 
@@ -47,19 +57,20 @@ var_dump($ary);
 
 <head>  
 
- <script type="text/javascript" src="chart.js"></script>
+
 
 </head>
+
   <body>
-    <div id="canvasb"   style="width:98%;" >
+    <div id="canvasb"   style="width:50%;" >
 <canvas id="canvas" ></canvas>
     </div>
 
-
+ <script type="text/javascript" src="chart.js"></script>
   <script>
 
 		var lineChartData = {
-			labels: ["minute1","minute2"],
+			labels: [<?php echo timebtc($ary);?>],
 			datasets : [
 				{
 					label: "My First dataset",
@@ -69,7 +80,7 @@ var_dump($ary);
 					pointStrokeColor : "#fff",
 					pointHighlightFill : "#fff",
 					pointHighlightStroke : "rgba(220,220,220,1)",
-					 data: [//<?php echo "$btcprice";?>]
+					 data: [<?php echo pricebtc($ary);?>]
 				},
 				
 			]

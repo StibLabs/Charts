@@ -1,5 +1,6 @@
 <?php include 'markets.php'; ?>
 <?php include 'statsbox.php'; ?>
+<?php include 'chartbtce.php'; ?>
 <div class="content" >
 <div class="dropdown" >
 
@@ -57,48 +58,69 @@ $('.cad a').click(function () {
 <div class="titlec" >
 <div class="tleft" >
 &nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
+&nbsp;&nbsp;<span class="smalltitle" >
+<script type="text/javascript">
+<!--
+var currentTime = new Date()
+var month = currentTime.getMonth() + 1
+var day = currentTime.getDate()
+var year = currentTime.getFullYear()
+document.write(month + "/" + day + "/" + year)
+//-->
+</script>
+</span>
 </div>
 <div class="tright" >
 <a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
-<div class="chartbox "  >
-<div style="width:98%;margin:8px auto;background:#000;" >
-<div style="width:94%;margin-left:auto;margin-right:auto;background:#000;" >
-				<canvas id="canvas" ></canvas>
-</div>
-</div>
-<script src="template/js/chartbtce.js"></script>
+
+
+
+<div class="chartbox ">
+<div class="chartboxx" style="width:100%;"><div style="width:98%;margin:8px auto;background:#000;"><div style="width:94%;margin-left:auto;margin-right:auto;background:#000;"><canvas id="canvas"></canvas>				
+
+<script>
+
+		var lineChartData = {
+			labels: [<?php echo timebtc($ary);?>],
+			datasets : [
+				{
+					label: "BTC-E CHART",
+					fillColor : "rgba(220,220,220,0.2)",
+					strokeColor : "rgba(220,220,220,1)",
+					pointColor : "rgba(220,220,220,1)",
+					pointStrokeColor : "#fff",
+					pointHighlightFill : "#fff",
+					pointHighlightStroke : "rgba(220,220,220,1)",data: [<?php echo pricebtc($ary);?>]				},
+				
+			]
+
+		}
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myLine = new Chart(ctx).Line(lineChartData, {
+			responsive: true
+		});
+	}
+
+</script></div></div></div>
 </div><!-- END CHARTBOX -->
+
+
+
+
+
+
 </div>
 <!-- END CHARTS -->
 
 
 
 
-<div class="tab2 charts"  >
-<div class="titlec" >
-<div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >BTC-E LITECOIN/USD</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
-</div>
-<div class="tright" >
-<a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
-</div>
-</div>
-<!-- END TITLEC -->
-<div class="chartbox "  >
-<div style="width:98%;margin:8px auto;background:#000;" >
-<div style="width:94%;margin-left:auto;margin-right:auto;background:#000;" >
-				<canvas id="canvas2" ></canvas>
-</div>
-</div>
 
-</div><!-- END CHARTBOX -->
-</div>
-<!-- END CHARTS -->
 
 
 
