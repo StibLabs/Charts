@@ -2,13 +2,13 @@
 //$page = $_SERVER['PHP_SELF'];
 //$sec = "30";
 //header("Refresh: $sec; url=$page");
-error_reporting(0);
+
 //BTC-E
 $jsonbtce    = file_get_contents('https://btc-e.com/api/3/ticker/btc_usd');
 $decodedbtce = json_decode($jsonbtce);
 $btceusd1    = $decodedbtce->btc_usd->last;
 $thetime     = $decodedbtce->btc_usd->updated;
-$time        = date('G:i', $thetime);
+$time        = date('G:i:s', $thetime);
 $btc1        = round($btceusd1, 4);
 
 $myFile = "btc.txt";
@@ -45,11 +45,11 @@ function pricebtc($ary)
                 
             } else {
                //echo $datatime[$bv]."<br>";
-              $datatime2[] = $datatime[$bv];
+              $datatime2[] = "[".$datatime[$bv]."]";
             }
         }
     }
-    //var_dump($datatime2);
+    var_dump($datatime2);
 
 
 
@@ -60,8 +60,7 @@ $data2 = array();
     foreach ($ary as $key => $value) {
         if ($key % 2 != 0) {
             //echo $value . "<br>";
-$btcval = $value;
-           $data2[] = $btcval;
+           $data2[] = $value;
         }
     }
 
@@ -84,23 +83,25 @@ foreach ($pricebt as $key => $value){
 }
 
 
-//var_dump($out);
-
-
-foreach ($out as $key=>$val3 ) {
-      echo  "{". "\""."date"."\"".":". "\"".$val3[0]. "\"".",". "\""."open"."\"".":". "\"".$val3[1]. "\"".",". "\""."high"."\"".":"."\"".$val3[2]. "\"".",". "\""."low"."\"".":"."\"".$val3[3]. "\"".",". "\""."close"."\"".":"."\"".$val3[4]. "\""."}".",";
 
 
 
-  }
+foreach ($out as $val3) {
+$val4 = implode(",", $val3);
+echo $val4."<br>";
+
 
 
 }
-//echo pricebtc($ary);
 
+
+
+}
+
+
+
+echo pricebtc($ary);
 
 
 
 ?>
-
-
