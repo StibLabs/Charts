@@ -1,6 +1,6 @@
 <?php
 //$page = $_SERVER['PHP_SELF'];
-//$sec = "30";
+//$sec = "1";
 //header("Refresh: $sec; url=$page");
 error_reporting(0);
 //BTC-E
@@ -88,7 +88,22 @@ foreach ($pricebt as $key => $value){
 
 
 foreach ($out as $key=>$val3 ) {
-      echo  "{". "\""."date"."\"".":". "\"".$val3[0]. "\"".",". "\""."open"."\"".":". "\"".$val3[1]. "\"".",". "\""."high"."\"".":"."\"".$val3[2]. "\"".",". "\""."low"."\"".":"."\"".$val3[3]. "\"".",". "\""."close"."\"".":"."\"".$val3[4]. "\""."}".",";
+
+$val3max = max($val3[1], $val3[2], $val3[3], $val3[4]);
+$val3min = min($val3[1], $val3[2], $val3[3], $val3[4]);
+$thevar =  "{". "\""."date"."\"".":". "\"".$val3[0]. "\"".",". "\""."open"."\"".":". "\"".$val3[1]. "\"".",". "\""."high"."\"".":"."\"".$val3max. "\"".",". "\""."low"."\"".":"."\"".$val3min. "\"".",". "\""."close"."\"".":"."\"".$val3[4]. "\""."}".",";
+
+if ( empty($val3[0]) ) {
+}
+else if ( empty($val3[1]) ) {
+}
+else if ( empty($val3max) ) {
+}
+else if ( empty($val3min) ) {
+}
+else
+{echo $thevar;}
+
 
 
 
@@ -96,7 +111,7 @@ foreach ($out as $key=>$val3 ) {
 
 
 }
-//echo pricebtc($ary);
+
 
 
 

@@ -79,34 +79,15 @@ document.write(month + "/" + day + "/" + year)
 
 
 <div class="chartbox ">
-<div class="chartboxx" style="width:100%;"><div style="width:98%;margin:8px auto;background:#000;"><div style="width:94%;margin-left:auto;margin-right:auto;background:#000;"><canvas id="canvas"></canvas>				
+<div class="chartboxx" style="width:100%;"><div style="width:98%;margin:8px auto;background:#000;">
 
-<script>
+<div class="thephp" ></div>
+<div id="chartdiv"></div>
 
-		var lineChartData = {
-			labels: [<?php echo timebtc($ary);?>],
-			datasets : [
-				{
-					label: "BTC-E CHART",
-					fillColor : "rgba(220,220,220,0.2)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(220,220,220,1)",data: [<?php echo pricebtc($ary);?>]				},
-				
-			]
 
-		}
 
-	window.onload = function(){
-		var ctx = document.getElementById("canvas").getContext("2d");
-		window.myLine = new Chart(ctx).Line(lineChartData, {
-			responsive: true
-		});
-	}
+</div></div>
 
-</script></div></div></div>
 </div><!-- END CHARTBOX -->
 
 
