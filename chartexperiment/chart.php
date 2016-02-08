@@ -8,12 +8,12 @@
 <style>
 #chartdiv {
 	width		: 80%;
-	height		: 500px;
+	height		: 400px;
 	font-size	: 11px;
 }	
 #chartdiv2 {
 	width	: 80%;
-	height	: 250px;
+	height	: 200px;
 }	
 
 </style>
@@ -24,10 +24,14 @@
 <div id="chartdiv2"></div>	
 <script>
 var updateInterval = setInterval(function() {
- $('.thephp').load('refresh.php');
-},5000);
+ $('.thephp').load('selectdata.php');
+},10*1000);
 </script>
-
+<script>
+var updateInterval = setInterval(function() {
+ $('.thephp').load('getdata.php');
+},10*1000);
+</script>
 
 
 

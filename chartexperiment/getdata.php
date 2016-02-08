@@ -10,8 +10,10 @@ $volumebtc    = $decodedbtce->btc_usd->vol;
 $volumec    = $decodedbtce->btc_usd->vol_cur;
 $btcesell    = $decodedbtce->btc_usd->sell;
 $btcebuy    = $decodedbtce->btc_usd->buy;
-$btcehigh    = $decodedbtce->btc_usd->high;
-$btcelow    = $decodedbtce->btc_usd->low;
+$btcehigh1    = $decodedbtce->btc_usd->high;
+$btcehigh    = round($btcehigh1, 4);
+$btcelow1    = $decodedbtce->btc_usd->low;
+$btcelow    = round($btcelow1, 4);
 $btceavg    = $decodedbtce->btc_usd->avg;
 //TIME
 $thetime     = $decodedbtce->btc_usd->updated;
@@ -54,7 +56,7 @@ VALUES (
 
 ";
 if(mysqli_query($link, $sql)){
-echo "Records added successfully.";
+echo "";
 } else{
 echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
