@@ -1,22 +1,24 @@
+https://live.amcharts.com/new/edit/
+
 <?php
 include 'connect.php';
 //BTC-E
-$jsonbtce    = file_get_contents('https://btc-e.com/api/3/ticker/btc_usd');
+$jsonbtce    = file_get_contents('https://api.bitfinex.com/v1/pubticker/BTCUSD');
 $decodedbtce = json_decode($jsonbtce);
 //BTC-E PRICE
-$btceusd1    = $decodedbtce->btc_usd->last;
+$btceusd1    = $decodedbtce->last_price;
 $btc1        = round($btceusd1, 4);
-$volumebtc    = $decodedbtce->btc_usd->vol;
-$volumec    = $decodedbtce->btc_usd->vol_cur;
-$btcesell    = $decodedbtce->btc_usd->sell;
-$btcebuy    = $decodedbtce->btc_usd->buy;
-$btcehigh1    = $decodedbtce->btc_usd->high;
+$volumebtc    = $decodedbtce->volume;
+$volumec    = $decodedbtce->volume;
+$btcesell    = $decodedbtce->ask;
+$btcebuy    = $decodedbtce->bid;
+$btcehigh1    = $decodedbtce->high;
 $btcehigh    = round($btcehigh1, 4);
-$btcelow1    = $decodedbtce->btc_usd->low;
+$btcelow1    = $decodedbtce->low;
 $btcelow    = round($btcelow1, 4);
-$btceavg    = $decodedbtce->btc_usd->avg;
+$btceavg    = $decodedbtce->mid;
 //TIME
-$thetime     = $decodedbtce->btc_usd->updated;
+$thetime     = $decodedbtce->timestamp;
 $time        = date('G:i', $thetime);
 
 

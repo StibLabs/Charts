@@ -1,39 +1,37 @@
 <?php
 include 'connect.php';
-
 // Attempt select query execution
 $sql = "SELECT * FROM btcedata";
 if($result = mysqli_query($link, $sql)){
-
 if(mysqli_num_rows($result) > 0){
 
 
 $arr = array();
 $volar = array();
+$btcopen = array();
+
 
 while($row = mysqli_fetch_array($result)){
- 
+
+
+$data = array($row['btcprice']);
+foreach($data as $ar){
+  //echo $ar."<br>";
+$btcopen[] =  $ar;
+}
 
 
 
-
-
-
-
-$thevar =  "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".","."\""."high"."\"".":"."\"".$row['btchigh']. "\"".",". "\""."low"."\"".":"."\"".$row['btclow']. "\"".",". "\""."close"."\"".":"."\"".$row['btcprice']. "\""."}".",";
+$thevar =  "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."open"."\"".":". "\"".$row['btcprice']. "\"".",". "\""."high"."\"".":"."\"".$row['btchigh']. "\"".",". "\""."low"."\"".":"."\"".$row['btclow']. "\"".",". "\""."close"."\"".":"."\"".$row['btcprice']. "\""."}".",";
 $vol = "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."value"."\"".":". "\"".$row['btcvolume']. "\""."}".",";
 
 $arr[] = $thevar;
 $volar[] = $vol;
 
 
-   
-
-
-
-
-
 }
+
+var_dump($btcopen);
 
 
 
@@ -66,42 +64,14 @@ foreach($volar as $value2) {
 
 
 ?>
-<?php echo btcprice($arr);?>
+
+
+
+
+
 <script>
+
 var chart = AmCharts.makeChart( "chartdiv", {
-  "type": "serial",
-  "theme": "light",
-  "dataDateFormat":"YYYY-MM-DD",
-  "valueAxes": [ {
-    "position": "left"
-  } ],
-  "graphs": [ 
-
-
-{"date": "2011-08-05","open": "132.90","high": "135.27","low": "128.30","close": "135.25"}
-
- ],
-  "export": {
-    "enabled": true,
-    "position": "bottom-right"
-  }
-} );
-
-chart.addListener( "rendered", zoomChart );
-zoomChart();
-
-// this method is called when chart is first inited as we listen for "dataUpdated" event
-function zoomChart() {
-  // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
-  chart.zoomToIndexes( 10, 20 );
-}
-</script>
-
-<?php echo btcprice($arr);?>
-
-<script>
-
-var chart = AmCharts.makeChart( "chartdiv3", {
   "type": "serial",
   "theme": "black",
   "dataDateFormat":"HH:MM",
@@ -111,7 +81,7 @@ var chart = AmCharts.makeChart( "chartdiv3", {
   "graphs": [ {
     "id": "g1",
     "proCandlesticks": true,
-    "balloonText": "Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b><br>",
+    "balloonText": "Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b><br>",
     "closeField": "close",
     "fillColors": "#7f8da9",
     "highField": "high",
@@ -121,8 +91,9 @@ var chart = AmCharts.makeChart( "chartdiv3", {
     "fillAlphas": 0.9,
     "negativeFillColors": "#db4c3c",
     "negativeLineColor": "#db4c3c",
+    "openField": "open",
     "title": "Price:",
-    "type": "hlc",
+    "type": "candlestick",
     "valueField": "close"
   } ],
   "chartScrollbar": {
