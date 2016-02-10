@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+
 //BTC-E
 $jsonbtce    = file_get_contents('https://btc-e.com/api/3/ticker/btc_usd');
 $decodedbtce = json_decode($jsonbtce);
@@ -14,15 +15,25 @@ $btcehigh1    = $decodedbtce->btc_usd->high;
 $btcehigh    = round($btcehigh1, 4);
 $btcelow1    = $decodedbtce->btc_usd->low;
 $btcelow    = round($btcelow1, 4);
-$btceavg    = $decodedbtce->btc_usd->avg;
+$btceavg1    = $decodedbtce->btc_usd->avg;
+$btceavg  = round($btceavg1, 4);
 //TIME
 $thetime     = $decodedbtce->btc_usd->updated;
 $time        = date('G:i', $thetime);
 
 
 
+echo $btc1."<br>";
+include 'delaybtce.php';
+echo $btcopen2;
 
 
+
+
+
+
+
+//$btcopen = btcopenprice(1);
 
 
 // Attempt insert query execution
@@ -38,6 +49,7 @@ btcbuy,
 btcsell, 
 btclow, 
 btchigh,
+btcopen,
 btcavg
 ) 
 VALUES (
@@ -49,7 +61,8 @@ VALUES (
 '$btcebuy', 
 '$btcesell',
 '$btcelow', 
-'$btcehigh', 
+'$btcehigh',
+'$btceopen',
 '$btceavg'
 )
 
