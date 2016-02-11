@@ -23,17 +23,9 @@ $time        = date('G:i', $thetime);
 
 
 
-echo $btc1."<br>";
+
 include 'delaybtce.php';
-echo $btcopen2;
-
-
-
-
-
-
-
-//$btcopen = btcopenprice(1);
+$btceopen = $btcopen2;
 
 
 // Attempt insert query execution

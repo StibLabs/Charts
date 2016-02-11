@@ -19,8 +19,8 @@ while($row = mysqli_fetch_array($result)){
 
 
 
-$thevar =  "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."open"."\"".":". "\"".$row['btcavg']. "\"".",". "\""."high"."\"".":"."\"".$row['btchigh']. "\"".",". "\""."low"."\"".":"."\"".$row['btclow']. "\"".",". "\""."close"."\"".":"."\"".$row['btcprice']. "\""."}".",";
-$vol = "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."value"."\"".":". "\"".$row['btcvolume']. "\""."}".",";
+$thevar =  "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."open"."\"".":". "\"".$row['btcopen']. "\"".",". "\""."high"."\"".":"."\"".$row['btchigh']. "\"".",". "\""."low"."\"".":"."\"".$row['btclow']. "\"".",". "\""."close"."\"".":"."\"".$row['btcprice']. "\""."}".",";
+$vol = "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."value"."\"".":". "\"".$row['btcvolumec']. "\""."}".",";
 
 $arr[] = $thevar;
 $volar[] = $vol;
@@ -80,14 +80,14 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "proCandlesticks": true,
     "balloonText": "Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b><br>",
     "closeField": "close",
-    "fillColors": "#7f8da9",
+    "fillColors": "#44F0FC",
     "highField": "high",
-    "lineColor": "#7f8da9",
-    "lineAlpha": 1,
+    "lineColor": "#44F0FC",
+    "lineAlpha": 0.2,
     "lowField": "low",
-    "fillAlphas": 0.9,
-    "negativeFillColors": "#db4c3c",
-    "negativeLineColor": "#db4c3c",
+    "fillAlphas": 1,
+    "negativeFillColors": "#FC4444",
+    "negativeLineColor": "#FC4444",
     "openField": "open",
     "title": "Price:",
     "type": "candlestick",
@@ -96,7 +96,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "chartScrollbar": {
     "graph": "g1",
     "graphType": "line",
-    "scrollbarHeight": 30
+    "scrollbarHeight": 20
   },
   "chartCursor": {
     "valueLineEnabled": true,
@@ -127,7 +127,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
 <script>
 var chart = AmCharts.makeChart("chartdiv2", {
     "type": "serial",
-    "theme": "light",
+    "theme": "black",
     "marginRight": 40,
     "marginLeft": 85,
     "autoMarginOffset": 20,
@@ -166,7 +166,7 @@ var chart = AmCharts.makeChart("chartdiv2", {
         "valueLineEnabled": true,
         "valueLineBalloonEnabled": true,
         "cursorAlpha":1,
-        "cursorColor":"#258cbb",
+        "cursorColor":"#FFFFFF",
         "limitToGraph":"g1",
         "valueLineAlpha":0.2
     },

@@ -3,9 +3,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
 
 <style>
+body
+{
+background:#000;
+}
 #chartdiv {
 	width		: 80%;
 	height		: 400px;
@@ -30,7 +34,7 @@ var updateInterval = setInterval(function() {
 <script>
 var updateInterval = setInterval(function() {
  $('.thephp').load('getdata.php');
-},10*1000);
+},30*1000);
 </script>
 
 
