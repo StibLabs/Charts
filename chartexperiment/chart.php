@@ -34,7 +34,7 @@ var updateInterval = setInterval(function() {
 <script>
 var updateInterval = setInterval(function() {
  $('.thephp').load('getdata.php');
-},30*1000);
+},60*1000);
 </script>
 
 

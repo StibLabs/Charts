@@ -43,13 +43,16 @@ $btceopen = $btcval;
 
 if (empty($btceopen)){
 
-echo "BTCOPEN EMPTY";
+//echo "BTCOPEN EMPTY";
 $btceopen = $btc1;
+
+
 }
 else
 {
 
-$btceopen4 = array();
+$thebtc1 = array();
+
 
 $sql = "SELECT * FROM btcedata";
 if($result = mysqli_query($link, $sql)){
@@ -57,9 +60,10 @@ if(mysqli_num_rows($result) > 0){
 
 while($row = mysqli_fetch_array($result)){
 $btcopen3 = $row['btcopen'];
-
 $btceopen = $btcopen3;
-$btceopen4[] = $btceopen;
+
+$thebtc = $row['btcprice'];
+$thebtc1[] = $thebtc;
 
 }
 mysqli_free_result($result);
@@ -69,19 +73,28 @@ else{echo "No records matching your query were found"."<br>";}
 echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }
 
-$btceopen5 = array_unique($btceopen4);
-$btceopen7 = implode("",$btceopen5);
-$btceopen6 = ((($btc1 + $btceopen7)/2)-$btc1)+$btceopen7;
-echo $btceopen6."<br>";
-echo $btc1;
 
-//$btceopenreal = $btc1;
+if (empty($z)){
+$var30  = end($thebtc1);
+$var31 = $var30;
+$z = $var31;
+
+}
+else{
+end($thebtc1);
+$z = prev($thebtc1);
+}
+//var_dump($var30);
+//var_dump($z);
+//var_dump($btc1);
+
+
+$btceopen = $z;
 
 
 
 
-
-echo "BTCOPEN NOT EMPTY";
+//echo "BTCOPEN NOT EMPTY";
 }
 
 
@@ -100,7 +113,6 @@ btcsell,
 btclow, 
 btchigh,
 btcopen,
-btcopenreal,
 btcavg
 ) 
 VALUES (
@@ -114,7 +126,6 @@ VALUES (
 '$btcelow', 
 '$btcehigh',
 '$btceopen',
-'$btceopenreal',
 '$btceavg'
 )
 

@@ -42,7 +42,6 @@ btcsell CHAR(30) NOT NULL,
 btclow CHAR(30) NOT NULL, 
 btchigh CHAR(30) NOT NULL,
 btcopen CHAR(30) NOT NULL,
-btcopenreal CHAR(30) NOT NULL,  
 btcavg CHAR(30) NOT NULL
 
 )

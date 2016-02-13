@@ -83,7 +83,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "fillColors": "#44F0FC",
     "highField": "high",
     "lineColor": "#44F0FC",
-    "lineAlpha": 0.2,
+    "lineAlpha": 0.3,
     "lowField": "low",
     "fillAlphas": 1,
     "negativeFillColors": "#FC4444",
