@@ -1,23 +1,72 @@
-<?php include 'config.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <title>YourSite</title>
 <link rel="stylesheet" href="template/style.css" type="text/css" />
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="template/js/menu.js"></script>
-<script src="template/js/marquee.js"></script>
-<script src="template/js/chartselect.js"></script>
+<script>
+		$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('.nav ul');
+				menuHeight	= menu.height();
+
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
+	</script>	
+<script>
+
+$(document).ready(function () {
+    $('.left').click(function () {
+        $('.container').animate({
+            'left': '+=-3%'
+        });
+    });
+    $('.right').click(function () {
+        $('.container').animate({
+            'left': '0px'
+        });
+    });    
+});
+</script>
+<script>
+
+$(function(){
+    $('#select').click(function(){
+        $('#sel-option').show();        
+    });
+    $('#sel-option a').click(function(e){
+         $('#select').text($(this).text());
+         $('#sel-option').hide(); 
+        $(this).addClass('current');
+        e.preventDefault();
+    })
+})
+</script>
+
 
 <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/black.js"></script>
 
  <script type="text/javascript" language="javascript" src="template/js/rssparser.js"></script>
+
+
 <meta name="viewport" content="width=device-width">
 </head>
 <body>
+
 
 
 <div class="top" >
@@ -61,7 +110,7 @@ BITCOIN / FIAT:
 	
 
 
-     <div class="crypto" ><script src="template/js/refresh.js"></script></div>
+     <div class="crypto" ></div>
  
  
  

@@ -1,5 +1,5 @@
 <?php
-include 'connect.php';
+include 'config.php';
 // Attempt select query execution
 $sql = "SELECT * FROM btcedata";
 if($result = mysqli_query($link, $sql)){
@@ -125,11 +125,12 @@ var chart = AmCharts.makeChart( "chartdiv", {
 
 
 <script>
+
 var chart = AmCharts.makeChart("chartdiv2", {
     "type": "serial",
     "theme": "black",
-    "marginRight": 40,
-    "marginLeft": 85,
+    "marginRight": 15,
+    "marginLeft": 60,
     "autoMarginOffset": 20,
     "dataDateFormat": "HH:MM",
     "valueAxes": [{

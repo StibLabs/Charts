@@ -1,19 +1,10 @@
-<?php include 'markets.php'; ?>
-<?php include 'statsbox.php'; ?>
-<?php include 'chartbtce.php'; ?>
+
+
 <div class="content" >
 <div class="dropdown" >
 
-<div class="tab1 bestprice " >
+<div class="bestprice" >
 <div class="cns bpajax" >
-
-</div>
-</div>
-<!-- END PRICE -->
-
-<div class="tab2 bestprice " >
-<div class="cns bpajax2" >
-
 </div>
 </div>
 <!-- END PRICE -->
@@ -24,15 +15,14 @@
 <div class="sb" >
 <div class="selectb" >
     <div id='select'>Select</div>
-	<div class="subselect" ><span class="smalltitle" >SWITCH CURRENCY</span></div>
+	<div class="subselect" ><span class="smalltitle" >SELECT MARKET</span></div>
 </div>  
 <div class="sarw" >	&dtrif;</div>
 </div>
 	
 	<ul class='toc-odd level-1 cad' id="sel-option" >
-
-	  <li><a href=".tab1">BITCOIN/USD</a></li>
-                  <li><a href=".tab2">LITECOIN/USD</a></li>
+	  <li><a href=".tab1">BTC-E/USD</a></li>
+      <li><a href=".tab2">BITFINEX/EUR</a></li>
 
     </ul>
 </div>
@@ -42,6 +32,7 @@
 $(document).ready(function () {
    $("[class*='tab1']").show();
    $("[class*='tab2']").hide();
+
 $('.cad a').click(function () {
    var tab_id = $(this).attr('href');    
    $("[class*='tab']").hide();
@@ -58,45 +49,58 @@ $('.cad a').click(function () {
 <div class="titlec" >
 <div class="tleft" >
 &nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD</span><br>
-&nbsp;&nbsp;<span class="smalltitle" >
-<script type="text/javascript">
-<!--
-var currentTime = new Date()
-var month = currentTime.getMonth() + 1
-var day = currentTime.getDate()
-var year = currentTime.getFullYear()
-document.write(month + "/" + day + "/" + year)
-//-->
-</script>
-</span>
+&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
 <a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
-
-
-
-<div class="chartbox ">
-<div class="chartboxx" style="width:100%;"><div style="width:98%;margin:8px auto;background:#000;">
-
+<div class="chartbox "  >
+<div style="width:98%;margin:8px auto;background:#000;">
 <div class="thephp" ></div>
 <div id="chartdiv"></div>
-
-
-
-</div></div>
+<div id="chartdiv2"></div>	
+</div>
 
 </div><!-- END CHARTBOX -->
-
-
-
-
-
-
 </div>
 <!-- END CHARTS -->
+
+
+
+
+<div class="tab2 charts"  >
+<div class="titlec" >
+<div class="tleft" >
+&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/EUR</span><br>
+&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
+</div>
+<div class="tright" >
+<a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
+</div>
+</div>
+<!-- END TITLEC -->
+<div class="chartbox "  >
+<div style="width:98%;margin:8px auto;background:#000;">
+<div class="thephp2" ></div>
+<div id="chartdiv3"></div>	
+<div id="chartdiv4"></div>
+</div>	
+</div><!-- END CHARTBOX -->
+</div>
+<!-- END CHARTS -->
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,7 +117,6 @@ document.write(month + "/" + day + "/" + year)
 <div class="content2" >
 <div class="c2left" >
 
-<div class="tab1 market" >
 <div class="markett" >
 BITCOIN/USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -130,43 +133,13 @@ document.write(month + "/" + day + "/" + year)
 //-->
 </script>
 </div>
+<div class="market" >
 <ul class="marketdatausd" >
 </ul>
 </div>
-<!-- MARKET 1 -->
-
-
-
-
-<div class="tab2 market"  >
-<div class="markett" >
-LITECOIN/USD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-<img src="template/images/date.png" alt="" />
-<script type="text/javascript">
-<!--
-var currentTime = new Date()
-var month = currentTime.getMonth() + 1
-var day = currentTime.getDate()
-var year = currentTime.getFullYear()
-document.write(month + "/" + day + "/" + year)
-//-->
-</script>
-</div>
-<ul class="marketdataeur" >
-</ul>
-</div>
-<!-- MARKET 2 -->
-
-
-
-
 <div class="marketst" >
 CLICK MARKET TO SEE CHART
 </div>
-
 
 
 
@@ -184,15 +157,15 @@ CLICK MARKET TO SEE CHART
 
 <div class="subst" >
 TRADE VOLUME (USD):<br>  
-<span class="agreen" ><?php echo $tvolusd;?></span>
+<span class="agreen" ><?php //echo $tvolusd;?></span>
 </div>
 <div class="subst" >
 TRADE VOLUME (BTC):<br>  
-<span class="agreen" ><?php echo $tvolbtc;?></span>
+<span class="agreen" ><?php //echo $tvolbtc;?></span>
 </div>
 <div class="subst" >
 BTC MINED:<br>  
-<span class="agreen" ><?php echo $btcmined;?></span>
+<span class="agreen" ><?php //echo $btcmined;?></span>
 </div>
 
 
@@ -213,27 +186,10 @@ BTC MINED:<br>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div><!-- END C2LEFT -->
+
+
+
 
 
 <div class="c2right" >
@@ -295,5 +251,22 @@ $(function(){
 
 </div><!-- END C2RIGHT -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <!-- END CONTENT2 -->
+

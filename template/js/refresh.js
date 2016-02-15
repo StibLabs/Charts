@@ -2,22 +2,33 @@ $.ajaxSetup ({
     // Disable caching of AJAX responses */
     cache: false
 });
+
+
 var updateInterval = setInterval(function() {
-  $('.crypto').load('json.php');
-  $('.bpajax').load('bestprice.php');
-  $('.bpajax2').load('bestpriceltc.php');
+ $('.thephp').load('selectdatabtce.php');
+},20*1000);
+var updateInterval = setInterval(function() {
+ $('.thephp').load('getdatabtce.php');
+},60*1000);
+
+var updateInterval = setInterval(function() {
   $('.marketdatausd').load('bitcoinusd.php');
-  $('.marketdataeur').load('litecoinusd.php');
-},1000);
+  $('.bpajax').load('bestprice.php');
+},1*1000);
 
 var updateInterval = setInterval(function() {
-$('.btcebtctrades').load('btcetradesbtcusd.php');
-},1000);
+ $('.thephp2').load('selectdatabitfinex.php');
+},60*1000);
+var updateInterval = setInterval(function() {
+ $('.thephp2').load('getdatabitfinex.php');
+},60*1000);
 
 var updateInterval = setInterval(function() {
-$('.btceltctrades').load('btcetradesltcusd.php');
-},1000);
+ $('.crypto').load('selectdatabtcfiat.php');
+},1*1000);
 
 var updateInterval = setInterval(function() {
- $('.thephp').load('chartbtce.php');
-},5000);
+ $('.crypto').load('getdatabtcfiat.php');
+},60*1000);
+
+

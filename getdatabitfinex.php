@@ -1,28 +1,27 @@
 <?php
-include 'connect.php';
+include 'config.php';
 
-//BTC-E
-$jsonbtce    = file_get_contents('https://btc-e.com/api/3/ticker/btc_usd');
+//BITFINEX
+$jsonbtce    = file_get_contents('https://api.bitfinex.com/v1/pubticker/BTCUSD');
 $decodedbtce = json_decode($jsonbtce);
 //BTC-E PRICE
-$btceusd1    = $decodedbtce->btc_usd->last;
+$btceusd1    = $decodedbtce->last_price;
 $btc1  = round($btceusd1, 4);
-$volumebtc    = $decodedbtce->btc_usd->vol;
-$volumec    = $decodedbtce->btc_usd->vol_cur;
-$btcesell    = $decodedbtce->btc_usd->sell;
-$btcebuy    = $decodedbtce->btc_usd->buy;
-$btcehigh1    = $decodedbtce->btc_usd->high;
+$volumec    = $decodedbtce->volume;
+$btcesell    = $decodedbtce->ask;
+$btcebuy    = $decodedbtce->bid;
+$btcehigh1    = $decodedbtce->high;
 $btcehigh    = round($btcehigh1, 4);
-$btcelow1    = $decodedbtce->btc_usd->low;
+$btcelow1    = $decodedbtce->low;
 $btcelow    = round($btcelow1, 4);
-$btceavg1    = $decodedbtce->btc_usd->avg;
+$btceavg1    = $decodedbtce->mid;
 $btceavg  = round($btceavg1, 4);
 //TIME
-$thetime     = $decodedbtce->btc_usd->updated;
+$thetime     = $decodedbtce->timestamp;
 $time        = date('G:i', $thetime);
 
 $btcodata = array();
-$sql = "SELECT * FROM btcedata";
+$sql = "SELECT * FROM bitfinexdata";
 if($result = mysqli_query($link, $sql)){
 if(mysqli_num_rows($result) > 0){
 while($row = mysqli_fetch_array($result)){
@@ -54,7 +53,7 @@ else
 $thebtc1 = array();
 
 
-$sql = "SELECT * FROM btcedata";
+$sql = "SELECT * FROM bitfinexdata";
 if($result = mysqli_query($link, $sql)){
 if(mysqli_num_rows($result) > 0){
 
@@ -102,11 +101,10 @@ $btceopen = $z;
 // Attempt insert query execution
 $sql = "
 
-INSERT INTO btcedata (
+INSERT INTO bitfinexdata (
 
 btctime, 
 btcprice, 
-btcvolume,
 btcvolumec, 
 btcbuy,
 btcsell, 
@@ -119,7 +117,6 @@ VALUES (
 
 '$time', 
 '$btc1', 
-'$volumebtc',
 '$volumec', 
 '$btcebuy', 
 '$btcesell',

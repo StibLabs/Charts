@@ -1,3 +1,4 @@
+jQuery.noConflict();
 $(function(){
     $('#select').click(function(){
         $('#sel-option').show();        

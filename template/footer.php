@@ -39,7 +39,7 @@
 
 
 
-
+<script src="template/js/refresh.js"></script>
 
 </body>
 </html>

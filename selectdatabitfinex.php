@@ -1,18 +1,17 @@
 <?php
-include 'connect.php';
-
+include 'config.php';
 // Attempt select query execution
-$sql = "SELECT * FROM btcedata";
+$sql = "SELECT * FROM bitfinexdata";
 if($result = mysqli_query($link, $sql)){
-
 if(mysqli_num_rows($result) > 0){
 
 
 $arr = array();
 $volar = array();
+$btcopen = array();
+
 
 while($row = mysqli_fetch_array($result)){
- 
 
 
 
@@ -20,20 +19,16 @@ while($row = mysqli_fetch_array($result)){
 
 
 
-$thevar =  "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".","."\""."high"."\"".":"."\"".$row['btchigh']. "\"".",". "\""."low"."\"".":"."\"".$row['btclow']. "\"".",". "\""."close"."\"".":"."\"".$row['btcprice']. "\""."}".",";
-$vol = "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."value"."\"".":". "\"".$row['btcvolume']. "\""."}".",";
+$thevar =  "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."open"."\"".":". "\"".$row['btcopen']. "\"".",". "\""."high"."\"".":"."\"".$row['btchigh']. "\"".",". "\""."low"."\"".":"."\"".$row['btclow']. "\"".",". "\""."close"."\"".":"."\"".$row['btcprice']. "\""."}".",";
+$vol = "{". "\""."date"."\"".":". "\"".$row['btctime']. "\"".",". "\""."value"."\"".":". "\"".$row['btcvolumec']. "\""."}".",";
 
 $arr[] = $thevar;
 $volar[] = $vol;
 
 
-   
-
-
-
-
-
 }
+
+
 
 
 
@@ -64,42 +59,14 @@ foreach($volar as $value2) {
 
 
 
+
 ?>
-<?php //echo btcprice($arr);?>
-<script>
-var chart = AmCharts.makeChart( "chartdiv", {
-  "type": "serial",
-  "theme": "light",
-  "dataDateFormat":"JJ:NN",
-  "valueAxes": [ {
-    "position": "left"
-  } ],
-  "graphs": [ 
 
 
-{"date": "18:31","high": "135.27","low": "128.30","close": "135.25"},
-{"date": "18:32","high": "135.27","low": "128.30","close": "135.25"},
- ],
-  "export": {
-    "enabled": true,
-    "position": "bottom-right"
-  }
-} );
-
-chart.addListener( "rendered", zoomChart );
-zoomChart();
-
-// this method is called when chart is first inited as we listen for "dataUpdated" event
-function zoomChart() {
-  // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
-  chart.zoomToIndexes( 10, 20 );
-}
-</script>
 
 
 
 <script>
-
 var chart = AmCharts.makeChart( "chartdiv3", {
   "type": "serial",
   "theme": "black",
@@ -110,24 +77,25 @@ var chart = AmCharts.makeChart( "chartdiv3", {
   "graphs": [ {
     "id": "g1",
     "proCandlesticks": true,
-    "balloonText": "Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b><br>",
+    "balloonText": "Open:<b>[[open]]</b><br>Low:<b>[[low]]</b><br>High:<b>[[high]]</b><br>Close:<b>[[close]]</b><br>",
     "closeField": "close",
-    "fillColors": "#7f8da9",
+    "fillColors": "#44F0FC",
     "highField": "high",
-    "lineColor": "#7f8da9",
-    "lineAlpha": 1,
+    "lineColor": "#44F0FC",
+    "lineAlpha": 0.3,
     "lowField": "low",
-    "fillAlphas": 0.9,
-    "negativeFillColors": "#db4c3c",
-    "negativeLineColor": "#db4c3c",
+    "fillAlphas": 1,
+    "negativeFillColors": "#FC4444",
+    "negativeLineColor": "#FC4444",
+    "openField": "open",
     "title": "Price:",
-    "type": "hlc",
+    "type": "candlestick",
     "valueField": "close"
   } ],
   "chartScrollbar": {
     "graph": "g1",
     "graphType": "line",
-    "scrollbarHeight": 30
+    "scrollbarHeight": 20
   },
   "chartCursor": {
     "valueLineEnabled": true,
@@ -139,7 +107,7 @@ var chart = AmCharts.makeChart( "chartdiv3", {
   },
   "dataProvider": [ 
 
-
+<?php echo btcprice($arr);?>
 
 
 
@@ -156,9 +124,10 @@ var chart = AmCharts.makeChart( "chartdiv3", {
 
 
 <script>
-var chart = AmCharts.makeChart("chartdiv2", {
+
+var chart = AmCharts.makeChart("chartdiv4", {
     "type": "serial",
-    "theme": "light",
+    "theme": "black",
     "marginRight": 40,
     "marginLeft": 85,
     "autoMarginOffset": 20,
@@ -197,7 +166,7 @@ var chart = AmCharts.makeChart("chartdiv2", {
         "valueLineEnabled": true,
         "valueLineBalloonEnabled": true,
         "cursorAlpha":1,
-        "cursorColor":"#258cbb",
+        "cursorColor":"#FFFFFF",
         "limitToGraph":"g1",
         "valueLineAlpha":0.2
     },
