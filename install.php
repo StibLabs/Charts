@@ -88,7 +88,6 @@ btchashrate CHAR(30) NOT NULL,
 btctotalfees CHAR(30) NOT NULL, 
 btcnmined CHAR(30) NOT NULL, 
 btcblocksmined CHAR(30) NOT NULL, 
-btcminutblocks CHAR(30) NOT NULL, 
 btctotalbtc CHAR(30) NOT NULL, 
 btctotalblocks CHAR(30) NOT NULL,
 btctradevol CHAR(30) NOT NULL,
@@ -98,8 +97,7 @@ btcminersrev CHAR(30) NOT NULL,
 btcdifficulty CHAR(30) NOT NULL,
 btctradevolbtc CHAR(30) NOT NULL,
 btcsent CHAR(30) NOT NULL, 
-btctotalbtcsent CHAR(30) NOT NULL,
-btcavg CHAR(30) NOT NULL
+minutesblocks CHAR(30) NOT NULL
 )
 ";
 

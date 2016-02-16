@@ -154,21 +154,11 @@ CLICK MARKET TO SEE CHART
 
 
 
-
-<div class="subst" >
-TRADE VOLUME (USD):<br>  
-<span class="agreen" ><?php //echo $tvolusd;?></span>
-</div>
-<div class="subst" >
-TRADE VOLUME (BTC):<br>  
-<span class="agreen" ><?php //echo $tvolbtc;?></span>
-</div>
-<div class="subst" >
-BTC MINED:<br>  
-<span class="agreen" ><?php //echo $btcmined;?></span>
-</div>
+<div class="stasbin" >
 
 
+
+</div>
 
 <br>
 

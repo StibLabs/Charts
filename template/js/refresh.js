@@ -32,3 +32,12 @@ var updateInterval = setInterval(function() {
 },60*1000);
 
 
+
+var updateInterval = setInterval(function() {
+ $('.stasbin').load('selectdatabtcstats.php');
+},1*1000);
+
+var updateInterval = setInterval(function() {
+ $('.stasbin').load('getdatabtcstats.php');
+},60*1000);
+
