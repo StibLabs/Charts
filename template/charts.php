@@ -22,7 +22,7 @@
 	
 	<ul class='toc-odd level-1 cad' id="sel-option" >
 	  <li><a href=".tab1">BTC-E/USD</a></li>
-      <li><a href=".tab2">BITFINEX/EUR</a></li>
+      <li><a href=".tab2">BITFINEX/USD</a></li>
 
     </ul>
 </div>
@@ -32,7 +32,8 @@
 $(document).ready(function () {
    $("[class*='tab1']").show();
    $("[class*='tab2']").hide();
-
+   $("[class*='tab3']").hide();
+   $("[class*='tab4']").hide();
 $('.cad a').click(function () {
    var tab_id = $(this).attr('href');    
    $("[class*='tab']").hide();
@@ -45,14 +46,40 @@ $('.cad a').click(function () {
 
 </div>
 <!-- END SIDEBAR -->
-<div class="tab1 charts"  >
+<script>
+$(document).ready(function () {
+   $("[id*='mtab1']").show();
+   $("[id*='mtab2']").hide();
+$('.tright a').click(function () {
+   var tab_id = $(this).attr('href');    
+   $("[id*='mtab']").hide();
+    $(tab_id).show();
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function () {
+   $("[id*='ntab1']").hide();
+   $("[id*='ntab2']").hide();
+$('.tright a').click(function () {
+   var tab_id = $(this).attr('href');    
+   $("[id*='ntab']").hide();
+    $(tab_id).show();
+  });
+});
+</script>
+
+
+<div id="mtab1" class="tab1 charts"  >
 <div class="titlec" >
 <div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD</span><br>
+&nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD 1 minute</span><br>
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
+<a href="#mtab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#mtab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
@@ -68,16 +95,49 @@ $('.cad a').click(function () {
 <!-- END CHARTS -->
 
 
-
-
-<div class="tab2 charts"  >
+<div id="mtab2" class="tab4 charts"  >
 <div class="titlec" >
 <div class="tleft" >
-&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/EUR</span><br>
+&nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD 1 hour</span><br>
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="" ><img src="template/images/settings.png" alt="" /></a>&nbsp;&nbsp;
+<a href="#mtab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#mtab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+<!-- END TITLEC -->
+<div class="chartbox "  >
+<div style="width:98%;margin:8px auto;background:#000;">
+<div class="thephpa" ></div>
+<div id="chartdiva"></div>
+<div id="chartdiva2"></div>	
+</div>
+
+</div><!-- END CHARTBOX -->
+</div>
+<!-- END CHARTS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="ntab1" class="tab2 charts"  >
+<div class="titlec" >
+<div class="tleft" >
+&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/USD 1minute</span><br>
+&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
+</div>
+<div class="tright" >
+<a href="#ntab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#ntab2" ><span class="smalltitle" >1hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
@@ -92,7 +152,26 @@ $('.cad a').click(function () {
 <!-- END CHARTS -->
 
 
-
+<div id="ntab2" class="tab3 charts"  >
+<div class="titlec" >
+<div class="tleft" >
+&nbsp;&nbsp;<span class="bigtitle" >BITFINEX BITCOIN/USD 1 hour</span><br>
+&nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
+</div>
+<div class="tright" >
+<a href="#ntab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#ntab2" ><span class="smalltitle" >1hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</div>
+<!-- END TITLEC -->
+<div class="chartbox "  >
+<div style="width:98%;margin:8px auto;background:#000;">
+<div class="thephpb2" ></div>
+<div id="chartdivb3"></div>	
+<div id="chartdivb4"></div>
+</div>	
+</div><!-- END CHARTBOX -->
+</div>
+<!-- END CHARTS -->
 
 
 
@@ -232,10 +311,29 @@ $(function(){
 
 </div><!-- END LATESTNEWS -->
 
-<div class="tab1 btcebtctrades glossary" >
+<div class="btcebtctrades glossary" >
+
+
+<div class="titlec" >
+<div class="tleft" >
+&nbsp;&nbsp;<span class="bigtitle" >BTC-E BITCOIN/USD</span><br>
+&nbsp;&nbsp;<span class="smalltitle" >TRADES INFO</span>
 </div>
-<div class="tab2 btceltctrades glossary" >
 </div>
+<div class="tnews2" >
+<div class="tnb" style="padding-top:15px;" >
+
+fghfgh
+
+
+
+</div>
+</div>
+
+
+
+</div>
+
 
 
 

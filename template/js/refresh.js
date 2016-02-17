@@ -5,20 +5,36 @@ $.ajaxSetup ({
 
 
 var updateInterval = setInterval(function() {
- $('.thephp').load('selectdatabtce.php');
-},20*1000);
+ $('.thephp').load('selectdatabtce1min.php');
+},3*1000);
+
+var updateInterval = setInterval(function() {
+ $('.thephpa').load('selectdatabtce1h.php');
+},3*1000);
+
+
+var updateInterval = setInterval(function() {
+ $('.thephp2').load('selectdatabitfinex1min.php');
+},3*1000);
+
+var updateInterval = setInterval(function() {
+ $('.thephpb2').load('selectdatabitfinex1h.php');
+},3*1000);
+
+
 var updateInterval = setInterval(function() {
  $('.thephp').load('getdatabtce.php');
 },60*1000);
+
+
+
 
 var updateInterval = setInterval(function() {
   $('.marketdatausd').load('bitcoinusd.php');
   $('.bpajax').load('bestprice.php');
 },1*1000);
 
-var updateInterval = setInterval(function() {
- $('.thephp2').load('selectdatabitfinex.php');
-},60*1000);
+
 var updateInterval = setInterval(function() {
  $('.thephp2').load('getdatabitfinex.php');
 },60*1000);
@@ -39,5 +55,5 @@ var updateInterval = setInterval(function() {
 
 var updateInterval = setInterval(function() {
  $('.stasbin').load('getdatabtcstats.php');
-},60*1000);
+},3600*1000);
 
