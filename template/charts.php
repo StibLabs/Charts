@@ -1,5 +1,11 @@
 
 
+
+
+
+
+
+
 <div class="content" >
 <div class="dropdown" >
 
@@ -79,7 +85,7 @@ $('.tright a').click(function () {
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="#mtab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#mtab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#mtab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#mtab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;<a href="#alarm1" ><img src="template/images/alarm.png" alt="" width="12px" height="12px" >&nbsp;<span class="smalltitle" >Alerts</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
@@ -102,7 +108,7 @@ $('.tright a').click(function () {
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="#mtab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#mtab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#mtab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#mtab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;<a href="" ><img src="template/images/alarm.png" alt="" width="12px" height="12px" >&nbsp;<span class="smalltitle" >Alerts</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
@@ -137,7 +143,7 @@ $('.tright a').click(function () {
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="#ntab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#ntab2" ><span class="smalltitle" >1hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#ntab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#ntab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;<a href="" ><img src="template/images/alarm.png" alt="" width="12px" height="12px" >&nbsp;<span class="smalltitle" >Alerts</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->
@@ -159,7 +165,7 @@ $('.tright a').click(function () {
 &nbsp;&nbsp;<span class="smalltitle" >SMALL DESCRIPTION HERE</span>
 </div>
 <div class="tright" >
-<a href="#ntab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#ntab2" ><span class="smalltitle" >1hour</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#ntab1" ><span class="smalltitle" >1min</span></a>&nbsp;&nbsp;<a href="#ntab2" ><span class="smalltitle" >1 hour</span></a>&nbsp;&nbsp;<a href="" ><img src="template/images/alarm.png" alt="" width="12px" height="12px" >&nbsp;<span class="smalltitle" >Alerts</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 </div>
 <!-- END TITLEC -->

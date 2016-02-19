@@ -1,5 +1,3 @@
-
-
 <div class="footer" >
 <div class="fb" >
 <div class="copyc" >
@@ -40,6 +38,10 @@
 
 
 <script src="template/js/refresh.js"></script>
+
+
+
+
 
 </body>
 </html>
