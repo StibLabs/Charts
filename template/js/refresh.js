@@ -9,6 +9,10 @@ var updateInterval = setInterval(function() {
 },3*1000);
 
 var updateInterval = setInterval(function() {
+ $('.abtce').load('alertbeepbtce.php');
+},58*1000);
+
+var updateInterval = setInterval(function() {
  $('.thephpa').load('selectdatabtce1h.php');
 },3*1000);
 

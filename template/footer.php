@@ -40,7 +40,87 @@
 <script src="template/js/refresh.js"></script>
 
 
+<script>
+$(document).ready(function () {
 
+
+ $( '#alertbox' ).click(function() {
+ $('#theal').slideToggle();
+ });
+});
+</script>
+
+<div id="theal" class="alertb" >
+<?php include 'alertprice.php' ?>
+<div class="abtce" >
+<?php
+echo "<form action=\"\" method=\"POST\" >";
+echo "<span class=\"smalltitle\">BTCE / USD ALERT</span>"."<br>";
+echo btcprice($arr);
+echo "<br><span class=\"smalltitle\"><label>High:</label></span><br>";
+echo "<input id=\"myHigh\" type=\"text\"  name=\"high\" value=\"\" ><br>";
+echo "<span class=\"smalltitle\"><label>Low:</label></span><br>";
+echo "<input id=\"myLow\" type=\"text\"  name=\"low\" value=\"\" ><br>";
+echo "<input type=\"submit\"  name=\"stopalarm\" value=\"Stop Alarm\" ><br>";
+echo "</form>";
+echo "<audio id=\"play\" src=\"beep.wav\" loop=\"loop\" ></audio>";
+
+
+?>
+</div>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+
+
+
+$( "#myHigh" ).keyup(function(e) {
+
+var key = e.which || e.keyCode;
+
+if ( key == 8){}else{
+nHigh = $( "#myHigh" ).val();
+if (nHigh <= <?php echo btcprice($arr);?>) {
+document.getElementById('play').play();
+}else
+{
+document.getElementById('play').pause();
+            return false;
+}}
+});
+
+
+$( "#myLow" ).keyup(function() {
+nLow = $( "#myLow" ).val();
+if (nLow >= <?php echo btcprice($arr);?>) {
+document.getElementById('play').play();
+}else
+{
+document.getElementById('play').pause();
+}
+})
+
+
+$('input:text').submit(
+    function(){
+        $(this).val('');
+    });
+
+
+
+
+
+
+});
+
+
+
+
+
+</script>
 
 
 </body>

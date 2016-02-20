@@ -62,7 +62,6 @@ $(function(){
 
  <script type="text/javascript" language="javascript" src="template/js/rssparser.js"></script>
 
-
 <meta name="viewport" content="width=device-width">
 </head>
 <body>
