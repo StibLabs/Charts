@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 <div class="content" >
 <div class="dropdown" >
 

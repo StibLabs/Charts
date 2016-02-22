@@ -12,7 +12,6 @@ $btchashrate = $decoded->hash_rate;
 $btctotalfees = $decoded->total_fees_btc;
 $btcnmined = $decoded->n_btc_mined;
 $btcblocksmined = $decoded->n_blocks_mined;
-$btctotalbtc = $decoded->totalbc;
 $btctotalblocks = $decoded->n_blocks_total;
 $btctradevol = $decoded->trade_volume_usd;
 $btctransvol = $decoded->estimated_transaction_volume_usd;
@@ -20,7 +19,6 @@ $btcblocksize = $decoded->blocks_size;
 $btcminersrev = $decoded->miners_revenue_usd;
 $btcdifficulty = $decoded->difficulty;
 $btctradevolbtc = $decoded->trade_volume_btc;
-$btcsent = $decoded->total_btc_sent;
 $minutesblocks = $decoded->minutes_between_blocks;
 
 
@@ -36,7 +34,6 @@ btchashrate,
 btctotalfees, 
 btcnmined, 
 btcblocksmined, 
-btctotalbtc, 
 btctotalblocks,
 btctradevol,
 btctransvol, 
@@ -44,7 +41,6 @@ btcblocksize,
 btcminersrev, 
 btcdifficulty,
 btctradevolbtc,
-btcsent, 
 minutesblocks
 ) 
 VALUES (
@@ -54,7 +50,6 @@ VALUES (
 '$btctotalfees',
 '$btcnmined', 
 '$btcblocksmined', 
-'$btctotalbtc', 
 '$btctotalblocks',
 '$btctradevol',
 '$btctransvol',
@@ -62,7 +57,6 @@ VALUES (
 '$btcminersrev',
 '$btcdifficulty', 
 '$btctradevolbtc',
-'$btcsent',
 '$minutesblocks'
 )
 

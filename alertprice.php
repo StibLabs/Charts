@@ -26,11 +26,32 @@ mysqli_close($link);
 
 function btcprice($arr){
 foreach($arr as $value) {
-    echo $value;
+    echo $value.rand(0,1);
 
 }
 }
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

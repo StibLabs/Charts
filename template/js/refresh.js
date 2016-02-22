@@ -3,14 +3,11 @@ $.ajaxSetup ({
     cache: false
 });
 
-
+$(document).ready(function() {	
 var updateInterval = setInterval(function() {
  $('.thephp').load('selectdatabtce1min.php');
 },3*1000);
 
-var updateInterval = setInterval(function() {
- $('.abtce').load('alertbeepbtce.php');
-},58*1000);
 
 var updateInterval = setInterval(function() {
  $('.thephpa').load('selectdatabtce1h.php');
@@ -61,3 +58,12 @@ var updateInterval = setInterval(function() {
  $('.stasbin').load('getdatabtcstats.php');
 },3600*1000);
 
+
+var updateInterval = setInterval(function() {
+ $('.refreshalert').load('alertprice.php');
+},1*1000);
+
+
+
+
+});
