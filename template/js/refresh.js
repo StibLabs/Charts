@@ -58,12 +58,9 @@ var updateInterval = setInterval(function() {
  $('.stasbin').load('getdatabtcstats.php');
 },3600*1000);
 
-
 var updateInterval = setInterval(function() {
  $('.refreshalert').load('alertprice.php');
 },1*1000);
-
-
 
 
 });

@@ -34,14 +34,11 @@ foreach($arr as $value) {
 
 ?>
 
+<?php 
 
+echo  btcprice($arr); 
 
-
-
-
-
-
-
+?>
 
 
 

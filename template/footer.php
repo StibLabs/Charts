@@ -53,22 +53,17 @@ $( '#closeal' ).click(function() {
 
 <div id="theal" class="alertb" >
 <div class="abtce" >
-<div class="refreshalert" >
-<?php include 'alertprice.php'; ?>
-</div>
-
-
-
-
 
 
 <?php
 echo "<form id=\"myform\" action=\"\" method=\"POST\" >";
 echo "<span class=\"smalltitle\">BTCE / USD ALERT</span>"."<br>";
-echo "<span class=\"bigtitle\" >";
-echo btcprice($arr);
-echo "</span>";
-echo "<br><span class=\"smalltitle\"><label>High:</label></span><br>";
+echo "<div id=\"thealert\" class=\"refreshalert\" >";
+
+
+
+echo "</div>";
+echo "<span class=\"smalltitle\"><label>High:</label></span><br>";
 echo "<input id=\"myHigh\" type=\"text\"  name=\"high\" value=\"\" ><br>";
 echo "<span class=\"smalltitle\"><label>Low:</label></span><br>";
 echo "<input id=\"myLow\" type=\"text\"  name=\"low\" value=\"\" ><br><br>";
@@ -76,9 +71,16 @@ echo "<button type=\"button\" id=\"setal\"  >Set</button>&nbsp;<button type=\"bu
 echo "</form>";
 echo "<audio id=\"play\" src=\"beep.wav\" loop=\"loop\" ></audio>";
 ?>
+<script>
+$( "#thealert" ).change(function() {
+  alert( "changed" );
+});
 
+</script>
 <script>
 $(document).ready(function(){
+
+
 
 
 $( "#myHigh" ).keyup(function(e) {
@@ -91,7 +93,7 @@ if ( key == 8){}else{
 nHigh = $( "#myHigh" ).val();
 $('#myHigh').append(nHigh);
 
-if (nHigh <= <?php echo btcprice($arr);?>) {
+if (nHigh <= myPrice ) {
 document.getElementById('play').play();
 }else
 {
@@ -103,7 +105,7 @@ document.getElementById('play').pause();
 
 $( "#myLow" ).keyup(function() {
 nLow = $( "#myLow" ).val();
-if (nLow >= <?php echo btcprice($arr);?>) {
+if (nLow >= myPrice ) {
 document.getElementById('play').play();
 }else
 {
@@ -115,6 +117,11 @@ document.getElementById('play').pause();
 $( '#cleara' ).click(function() {
         $('input:text').val('');
     });
+
+
+
+
+
 
 });
 </script>
