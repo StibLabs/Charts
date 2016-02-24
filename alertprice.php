@@ -2,11 +2,16 @@
 include 'config.php';
 // Attempt select query execution
 $sql = "
-SELECT * FROM (
-    SELECT * FROM btcedata ORDER BY id DESC LIMIT 1
-) sub
-ORDER BY id ASC
+SELECT * FROM ( SELECT * FROM btcedata ORDER BY id DESC LIMIT 1 ) sub ORDER BY id ASC
 ";
+
+
+
+
+
+
+
+
 if($result = mysqli_query($link, $sql)){
 if(mysqli_num_rows($result) > 0){
 $arr = array();
@@ -24,6 +29,9 @@ echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 // Close connection
 mysqli_close($link);
 
+
+
+
 function btcprice($arr){
 foreach($arr as $value) {
     echo $value.rand(0,1);
@@ -34,21 +42,10 @@ foreach($arr as $value) {
 
 ?>
 
-<?php 
-
-echo  btcprice($arr); 
-
-?>
 
 
 
-
-
-
-
-
-
-
+<?php echo btcprice($arr); ?>
 
 
 

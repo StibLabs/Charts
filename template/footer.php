@@ -55,6 +55,12 @@ $( '#closeal' ).click(function() {
 <div class="abtce" >
 
 
+
+
+<?php include 'alertprice.php'; ?>
+
+
+
 <?php
 echo "<form id=\"myform\" action=\"\" method=\"POST\" >";
 echo "<span class=\"smalltitle\">BTCE / USD ALERT</span>"."<br>";
@@ -71,18 +77,15 @@ echo "<button type=\"button\" id=\"setal\"  >Set</button>&nbsp;<button type=\"bu
 echo "</form>";
 echo "<audio id=\"play\" src=\"beep.wav\" loop=\"loop\" ></audio>";
 ?>
-<script>
-$( "#thealert" ).change(function() {
-  alert( "changed" );
-});
 
-</script>
+
+
+
+
+
+
 <script>
 $(document).ready(function(){
-
-
-
-
 $( "#myHigh" ).keyup(function(e) {
 
 var key = e.which || e.keyCode;
@@ -93,7 +96,7 @@ if ( key == 8){}else{
 nHigh = $( "#myHigh" ).val();
 $('#myHigh').append(nHigh);
 
-if (nHigh <= myPrice ) {
+if (nHigh <= <?php echo btcprice($arr); ?> ) {
 document.getElementById('play').play();
 }else
 {
@@ -105,7 +108,7 @@ document.getElementById('play').pause();
 
 $( "#myLow" ).keyup(function() {
 nLow = $( "#myLow" ).val();
-if (nLow >= myPrice ) {
+if (nLow >= <?php echo btcprice($arr); ?> ) {
 document.getElementById('play').play();
 }else
 {
