@@ -1,4 +1,6 @@
 <?php
+
+
 include 'config.php';
 // Attempt select query execution
 $sql = "
@@ -34,7 +36,7 @@ mysqli_close($link);
 
 function btcprice($arr){
 foreach($arr as $value) {
-    echo $value.rand(0,1);
+    echo $value.rand(0,3);
 
 }
 }
@@ -45,7 +47,14 @@ foreach($arr as $value) {
 
 
 
-<?php echo btcprice($arr); ?>
+<?php 
+
+echo btcprice($arr); 
+
+
+
+
+?>
 
 
 

@@ -57,7 +57,7 @@ $( '#closeal' ).click(function() {
 
 
 
-<?php include 'alertprice.php'; ?>
+
 
 
 
@@ -86,6 +86,14 @@ echo "<audio id=\"play\" src=\"beep.wav\" loop=\"loop\" ></audio>";
 
 <script>
 $(document).ready(function(){
+
+var pricebtc;
+var updateInterval = setInterval(function() {
+ $('#thealert').load('alertprice.php');
+ pricebtc = $('#thealert').html();
+},1*1000);
+
+
 $( "#myHigh" ).keyup(function(e) {
 
 var key = e.which || e.keyCode;
@@ -96,7 +104,7 @@ if ( key == 8){}else{
 nHigh = $( "#myHigh" ).val();
 $('#myHigh').append(nHigh);
 
-if (nHigh <= <?php echo btcprice($arr); ?> ) {
+if (nHigh <= pricebtc ) {
 document.getElementById('play').play();
 }else
 {
@@ -108,7 +116,7 @@ document.getElementById('play').pause();
 
 $( "#myLow" ).keyup(function() {
 nLow = $( "#myLow" ).val();
-if (nLow >= <?php echo btcprice($arr); ?> ) {
+if (nLow >= pricebtc ) {
 document.getElementById('play').play();
 }else
 {

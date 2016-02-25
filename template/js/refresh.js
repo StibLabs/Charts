@@ -62,17 +62,6 @@ var updateInterval = setInterval(function() {
 
 
 
-var updateInterval = setInterval(function() {
- $('#thealert').load('alertprice.php');
-},1*1000);
-
-
-
-
-
-
-
-
 
 
 });
