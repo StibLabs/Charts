@@ -87,11 +87,15 @@ echo "<audio id=\"play\" src=\"beep.wav\" loop=\"loop\" ></audio>";
 <script>
 $(document).ready(function(){
 
-var pricebtc;
+var price;
 var updateInterval = setInterval(function() {
- $('#thealert').load('alertprice.php');
- pricebtc = $('#thealert').html();
+   $('#thealert').load('alertprice.php', function(){
+    price = $('#thealert').html();
+   });
+
 },1*1000);
+
+
 
 
 $( "#myHigh" ).keyup(function(e) {
@@ -104,7 +108,7 @@ if ( key == 8){}else{
 nHigh = $( "#myHigh" ).val();
 $('#myHigh').append(nHigh);
 
-if (nHigh <= pricebtc ) {
+if (nHigh <= change ) {
 document.getElementById('play').play();
 }else
 {
@@ -116,7 +120,7 @@ document.getElementById('play').pause();
 
 $( "#myLow" ).keyup(function() {
 nLow = $( "#myLow" ).val();
-if (nLow >= pricebtc ) {
+if (nLow >= change ) {
 document.getElementById('play').play();
 }else
 {
